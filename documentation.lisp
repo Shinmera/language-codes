@@ -40,4 +40,4 @@ CODE  --- A string of the two- or three-letter code
 NAME  --- A string for a human-readable name of the
           language this code identifies.
 
-See LANGUAGE-NAMES"))
+See NAMES"))

@@ -1,0 +1,105 @@
+<!DOCTYPE html> <html xmlns="http://www.w3.org/1999/xhtml"> <head> <meta charset="utf-8"> <title>Language-Codes</title> <meta name="viewport" content="width=device-width"> <meta name="description" content="A small library mapping language codes to language names."> <meta name="author" content="Nicolas Hafner &lt;shinmera@tymoon.eu&gt;"> <style type="text/css"> body{
+          max-width: 1024px;
+          margin: 0 auto 0 auto;
+          font-family: sans-serif;
+          color: #333333;
+          font-size: 14pt;
+          padding: 5px;
+      }
+      body>header{
+          display:flex;
+          align-items: center;
+          justify-content: center;
+          flex-direction: column;
+          max-width: 100%;
+          text-align: center;
+      }
+      body>header img{
+          max-width: 50%;
+      }
+      img{
+          max-width: 100%;
+          max-height: 100%;
+      }
+      code{
+          font-family: Consolas, Inconsolata, monospace;
+      }
+      a{
+          text-decoration: none;
+          color: #0055AA;
+      }
+      a img{
+          border: none;
+      }
+      #documentation{
+          text-align: justify;
+      }
+      #documentation pre{
+          margin-left: 20px;
+          overflow: auto;
+      }
+      #documentation img{
+          margin: 5px;
+      }
+      #symbol-index>ul{
+          list-style: none;
+          padding: 0;
+      }
+      #symbol-index .package>ul{
+          list-style: none;
+          padding: 0 0 0 10px;
+      }
+      #symbol-index .package .nicknames{
+          font-weight: normal;
+      }
+      #symbol-index .package h4{
+          display: inline-block;
+          margin: 0;
+      }
+      #symbol-index .package article{
+          margin: 0 0 15px 0;
+      }
+      #symbol-index .package article header{
+          font-size: 1.2em;
+          font-weight: normal;
+      }
+      #symbol-index .package .name{
+          margin-right: 5px;
+      }
+      #symbol-index .package .docstring{
+          margin: 0 0 0 15px;
+          white-space: pre-wrap;
+          font-size: 12pt;
+      }
+      @media (max-width: 800px){
+          body{font-size: 12pt;}
+      } </style> </head> <body> <header> <h1>language-codes</h1> <span class="version">1.0.0</span> <p class="description">A small library mapping language codes to language names.</p> </header> <main> <article id="documentation">  <div><h2>About Language-Codes</h2> <p>This is a small library providing the ISO-639 language code to language name mapping.</p> <h2>How To</h2> <p>After loading the library, simply use <code><a href="#LANGUAGE-CODES:NAMES">names</a></code> to retrieve the list of known names for a language code.</p> <pre><code>(<a href="#LANGUAGE-CODES:NAMES">language-codes:names</a> :eng)      ; =&gt; (&quot;English&quot;)
+(<a href="#LANGUAGE-CODES:NAMES">language-codes:names</a> :ht)       ; =&gt; (&quot;Haitian&quot; &quot;Haitian Creole&quot;)
+</code></pre> <p>You can also perform the inverse lookup, by <code><a href="#LANGUAGE-CODES:CODES">codes</a></code>.</p> <pre><code>(<a href="#LANGUAGE-CODES:CODES">language-codes:codes</a> &quot;english&quot;) ; =&gt; (:ENG :EN)
+</code></pre> </div>  </article> <article id="copyright">  <h2>Copyright</h2> <span>language-codes</span> is licensed under the <span><a href="https://tldrlegal.com/search?q=Artistic">Artistic</a></span> license.  © <span>Nicolas Hafner &lt;shinmera@tymoon.eu&gt;</span> .  This library can be obtained on <a href="https://github.com/Shinmera/language-codes">https://github.com/Shinmera/language-codes</a>.  </article>  <article id="symbol-index"> <h2>Package Index</h2> <ul> <li class="package"> <h3> <a name="LANGUAGE-CODES" href="#LANGUAGE-CODES">LANGUAGE-CODES</a> <span class="nicknames">(ORG.SHIRAKUMO.LANGUAGE-CODES)</span> </h3> <ul> <li> <a name="LANGUAGE-CODES:NAMES"> </a> <article id="ACCESSOR LANGUAGE-CODES:NAMES"> <header class="accessor"> <span class="type">accessor</span>  <code>(</code><h4 class="name"><code><a href="#ACCESSOR%20LANGUAGE-CODES%3ANAMES">NAMES</a></code></h4> <code class="qualifiers"></code> <code class="arguments">CODE</code><code>)</code>  </header> <div class="docstring"><pre>Accessor to the list of English language names for the given language code.
+
+The code can be either a string or keyword of the
+two- or three-letter ISO 639 codes.
+
+By default codes for ISO-639-1 and ISO-639-3 are
+loaded in. You can use this function to define your
+own code mappings if necessary.
+
+See https://www.loc.gov/standards/iso639-2/php/English_list.php
+See https://iso639-3.sil.org/
+See <a href="#LANGUAGE-CODES:CODES">CODES</a></pre></div> </article> </li>  <li> <a name="LANGUAGE-CODES:LOAD-CODE-MAP"> </a> <article id="FUNCTION LANGUAGE-CODES:LOAD-CODE-MAP"> <header class="function"> <span class="type">function</span>  <code>(</code><h4 class="name"><code><a href="#FUNCTION%20LANGUAGE-CODES%3ALOAD-CODE-MAP">LOAD-CODE-MAP</a></code></h4> <code class="qualifiers"></code> <code class="arguments">FILE</code><code>)</code>  </header> <div class="docstring"><pre>Load a code map file.
+
+The file should be composed of s-expressions of
+the following format:
+
+FILE  ::= ENTRY*
+ENTRY ::= (CODE NAME*)
+CODE  --- A string of the two- or three-letter code
+NAME  --- A string for a human-readable name of the
+          language this code identifies.
+
+See <a href="#LANGUAGE-CODES:NAMES">NAMES</a></pre></div> </article> </li>  <li> <a name="LANGUAGE-CODES:CODES"> </a> <article id="GENERIC LANGUAGE-CODES:CODES"> <header class="generic"> <span class="type">generic</span>  <code>(</code><h4 class="name"><code><a href="#GENERIC%20LANGUAGE-CODES%3ACODES">CODES</a></code></h4> <code class="qualifiers"></code> <code class="arguments">LANGUAGE</code><code>)</code>  </header> <div class="docstring"><pre>Returns the list of known codes for the given language.
+
+The language is matched case-insensitively.
+
+See <a href="#LANGUAGE-CODES:NAMES">NAMES</a></pre></div> </article> </li> </ul> </li> </ul> </article>  </main> </body> </html> 
