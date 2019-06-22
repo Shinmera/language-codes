@@ -6,7 +6,7 @@
 
 (asdf:defsystem language-codes
   :version "1.0.0"
-  :license "Artistic"
+  :license "zlib"
   :author "Nicolas Hafner <shinmera@tymoon.eu>"
   :maintainer "Nicolas Hafner <shinmera@tymoon.eu>"
   :description "A small library mapping language codes to language names."
