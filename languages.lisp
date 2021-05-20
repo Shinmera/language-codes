@@ -42,7 +42,7 @@
   (gethash language *language-name-map*))
 
 (defun load-code-map (file)
-  (with-open-file (stream file :external-format :utf8)
+  (with-open-file (stream file :external-format :utf-8)
     (loop for line = (read stream NIL :eof)
           until (eql line :eof)
           do (destructuring-bind (code &rest names) line
