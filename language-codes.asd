@@ -4,7 +4,7 @@
   :author "Yukari Hafner <shinmera@tymoon.eu>"
   :maintainer "Yukari Hafner <shinmera@tymoon.eu>"
   :description "A small library mapping language codes to language names."
-  :homepage "https://github.com/Shinmera/language-codes"
+  :homepage "https://shinmera.com/project/language-codes"
   :serial T
   :components ((:static-file "data/iso-639-1.lisp")
                (:static-file "data/iso-639-3.lisp")
