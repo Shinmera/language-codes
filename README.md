@@ -1,12 +1,4 @@
-## About Language-Codes
-This is a small library providing the ISO-639 language code to language name mapping.
+# This repository has [moved](https://shinmera.com/projects/language-codes)!
+Due to Microsoft's continued enshittification of the platform this repository has been moved to [Codeberg](https://shinmera.com/projects/language-codes) in August of 2025. It will not receive further updates or patches. **Issues and pull requests will not be looked at here either**, please submit your patches and issue tickets on Codeberg, or send them directly via good old email patches to [shirakumo@tymoon.eu](mailto:shirakumo@tymoon.eu).
 
-## How To
-After loading the library, simply use `names` to retrieve the list of known names for a language code.
-    
-    (language-codes:names :eng)      ; => ("English")
-    (language-codes:names :ht)       ; => ("Haitian" "Haitian Creole")
-
-You can also perform the inverse lookup, by `codes`.
-
-    (language-codes:codes "english") ; => (:ENG :EN)
+Thanks.
